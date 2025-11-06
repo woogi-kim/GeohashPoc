@@ -24,4 +24,12 @@ public class PixelController {
             @RequestParam double radius) {
         return pixelService.findPixelsWithinRadius(longitude, latitude, radius);
     }
+
+    @GetMapping("/search/geohash")
+    public List<Pixel> getPixelsByGeohash(
+            @RequestParam double latitude,
+            @RequestParam double longitude,
+            @RequestParam int radius) {
+        return pixelService.findPixelsByGeohash(latitude, longitude, radius);
+    }
 }
