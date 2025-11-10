@@ -1,5 +1,7 @@
 package com.demo.geohashpoc.entity;
 
+import com.demo.geohashpoc.config.PointSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,6 +24,7 @@ public class Pixel {
     private Long id;
 
     @Column(nullable = false)
+    @JsonSerialize(using = PointSerializer.class)
     private Point coordinate;
 
     private Long x;

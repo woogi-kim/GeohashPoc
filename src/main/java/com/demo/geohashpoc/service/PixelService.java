@@ -16,7 +16,8 @@ public class PixelService {
 
     public List<Pixel> findPixelsWithinRadius(double longitude, double latitude, double radius) {
         String point = String.format("POINT(%f %f)", latitude, longitude);
-        return pixelRepository.findPixelsWithinRadius(point, radius);
+        List<Pixel> list = pixelRepository.findPixelsWithinRadius(point, radius);
+		return list;
     }
 
     public List<Pixel> findPixelsByGeohash(double latitude, double longitude, int radius) {
